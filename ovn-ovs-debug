@@ -17,7 +17,7 @@ kubectl ko sbctl --help
 ovs bridge debugs:
 Login into the ovs-ovn container of respective node to execute the commands
 
-ovs-vsctl show - To get the vs bridge and bridge ports
+ovs-vsctl show - To get the ovs bridge and bridge ports
 ovs-ofctl dump-flows <bridge-name> - To get the openflows related to the ovs bridge
 ovs-appctl fdb/show <bridge-name> - To get the mac entries learnt by ovs bridge
 
