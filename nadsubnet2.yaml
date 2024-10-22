@@ -1,0 +1,13 @@
+apiVersion: kubeovn.io/v1
+kind: Subnet
+metadata:
+  name: attachnet2
+spec:
+  protocol: IPv4
+  provider: attachnet2.default.ovn
+  vpc: commonvpc
+  cidrBlock: 172.30.0.0/16
+  gateway: 172.30.0.1
+  excludeIps:
+  - 172.30.0.0..172.30.0.10
+

@@ -1,0 +1,13 @@
+kind: Vpc
+apiVersion: kubeovn.io/v1
+metadata:
+  name: vpc-2
+spec:
+  vpcPeerings:
+    - remoteVpc: vpc-1
+      localConnectIP: 159.254.0.2/30
+  staticRoutes:
+    - cidr: 172.20.0.0/16
+      nextHopIP: 159.254.0.1
+      policy: policyDst
+
