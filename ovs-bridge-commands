@@ -1,0 +1,12 @@
+ovs-vsctl add-br <bridge>
+ovs-vsctl add-port <bridge> <port> tag=<id>
+
+ovs-vsctl del-port <bridge> <port>
+ovs-vsctl del-br <bridge>
+
+
+ovs-vsctl show - Lists the bridge and bridge ports attached
+
+
+
+
