@@ -1,0 +1,47 @@
+apiVersion: k8s.cni.cncf.io/v1
+kind: NetworkAttachmentDefinition
+metadata:
+  creationTimestamp: '2024-10-18T16:36:08Z'
+  finalizers:
+    - wrangler.cattle.io/harvester-network-nad-controller
+    - wrangler.cattle.io/harvester-network-manager-nad-controller
+  generation: 1
+  labels:
+    network.harvesterhci.io/clusternetwork: cluster-1
+    network.harvesterhci.io/ready: 'true'
+    network.harvesterhci.io/type: UntaggedNetwork
+  managedFields:
+    - apiVersion: k8s.cni.cncf.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:finalizers:
+            .: {}
+            v:"wrangler.cattle.io/harvester-network-manager-nad-controller": {}
+            v:"wrangler.cattle.io/harvester-network-nad-controller": {}
+          f:labels:
+            .: {}
+            f:network.harvesterhci.io/clusternetwork: {}
+            f:network.harvesterhci.io/ready: {}
+            f:network.harvesterhci.io/type: {}
+      manager: harvester-network-controller
+      operation: Update
+      time: '2024-10-18T16:36:08Z'
+    - apiVersion: k8s.cni.cncf.io/v1
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          .: {}
+          f:config: {}
+      manager: kubectl-create
+      operation: Update
+      time: '2024-10-18T16:36:08Z'
+  name: attachnet
+  namespace: default
+  resourceVersion: '9477890'
+  uid: 8a5f2347-a45e-4549-a062-7c17b8fd721f
+spec:
+  config: >-
+    { "cniVersion": "0.3.1", "type": "kube-ovn", "bridge":"cluster-1-br",
+    "server_socket": "/run/openvswitch/kube-ovn-daemon.sock", "provider":
+    "attachnet.default.ovn" }
